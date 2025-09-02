@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thijin Simon Duop | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #121212;
+      color: #fff;
+      text-align: center;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3 {
+      color: #FFD700;
+    }
+
+    a {
+      color: #00FFFF;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg, #1a1a1a, #2b0033);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .hero img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #FFD700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.3rem; max-width: 600px; }
+
+    .hero .cta-buttons { margin-top: 20px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .hero button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: #FFD700;
+      color: #000;
+      transition: 0.3s;
+    }
+    .hero button:hover { background: #00FFFF; color: #000; }
+
+    section { padding: 60px 20px; }
+    section:nth-child(even) { background: #1e1e1e; }
+
+    /* Portfolio Cards */
+    .portfolio-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 60px; }
+    .card {
+      background: #1f1f1f;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+      max-width: 320px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover { transform: scale(1.05); box-shadow: 0 0 25px #FFD700; }
+    .card img { width: 100%; height: auto; display: block; }
+    .card-content { padding: 20px; }
+    .card-content h3 { margin-bottom: 10px; color: #FFD700; }
+    .card-content p { font-size: 1rem; color: #ddd; }
+
+    /* Hackathon Section */
+    .hackathon-section { margin: 40px 0; }
+    .hackathon-section img {
+      width: 95%;
+      max-width: 1200px;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+      margin: 0 auto;
+      border: 4px solid #FFD700;
+      box-shadow: 0 0 20px #FFD700;
+    }
+    .hackathon-section h3 { margin-top: 15px; }
+    .hackathon-section p { max-width: 800px; margin: 10px auto 0 auto; color: #ddd; }
+
+    /* Skills Section */
+    .skills-section { padding: 60px 20px; background: linear-gradient(135deg, #1a1a1a, #330022); }
+    .skill { margin: 15px auto; max-width: 600px; text-align: left; }
+    .skill h4 { margin-bottom: 5px; color: #FFD700; }
+    .skill-bar { height: 20px; background: #333; border-radius: 10px; overflow: hidden; }
+    .skill-progress {
+      height: 100%;
+      background: #00FFFF;
+      text-align: right;
+      padding-right: 10px;
+      color: #000;
+      font-weight: bold;
+      border-radius: 10px 0 0 10px;
+    }
+
+    /* CV Button */
+    .cv-button {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 12px 30px;
+      background: #FFD700;
+      color: #000;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .cv-button:hover { background: #00FFFF; color: #000; }
+
+    /* Contact Form */
+    .contact-form {
+      margin: 20px auto;
+      max-width: 500px;
+      text-align: left;
+    }
+    .contact-form label { display: block; margin-bottom: 5px; color: #FFD700; }
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 10px; margin-bottom: 15px;
+      border-radius: 6px; border: none; font-size: 1rem;
+    }
+    .contact-form button {
+      background: #FFD700; color: #000; padding: 10px 20px; border: none;
+      border-radius: 8px; font-weight: bold; transition: 0.3s;
+    }
+    .contact-form button:hover { background: #00FFFF; color: #000; }
+
+    /* Contact Section */
+    .contact p { margin: 10px 0; }
+    .contact a { font-weight: bold; }
+    .social-icons { margin-top: 15px; display: flex; justify-content: center; gap: 20px; }
+    .social-icons a { font-size: 1.5rem; color: #00FFFF; transition: 0.3s; }
+    .social-icons a:hover { color: #FFD700; }
+
+    footer { background: #1a1a1a; padding: 20px; font-size: 0.9rem; color: #bbb; }
+
+    @media (max-width: 768px) {
+      .hero img { width: 140px; height: 140px; }
+      .portfolio-cards { flex-direction: column; align-items: center; }
+      .card { max-width: 90%; }
+      .hackathon-section img { width: 90%; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="thijin.jpg" alt="Thijin Simon Duop">
+    <h1>I’m Thijin Simon Duop</h1>
+    <p>Digital Marketer, Fundraiser & Team Member at StepUp.One</p>
+    <div class="cta-buttons">
+      <button onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">View My Work</button>
+      <button onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      My name is <strong>Thijin Simon Duop</strong>, a passionate Digital Marketer and Fundraiser currently working with 
+      <strong>StepUp.One</strong>. I specialize in social media management, content creation, and digital campaigns 
+      that make a measurable impact. At StepUp.One, I also contribute to fundraising initiatives, connecting resources 
+      with opportunities to support youth and community growth.
+    </p>
+    <a href="thijin_cv.pdf" class="cv-button" target="_blank">Download My CV</a>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills-section">
+    <h2>My Skills</h2>
+    <div class="skill"><h4>Digital Marketing</h4><div class="skill-bar"><div class="skill-progress" style="width: 90%;">90%</div></div></div>
+    <div class="skill"><h4>Social Media Management</h4><div class="skill-bar"><div class="skill-progress" style="width: 85%;">85%</div></div></div>
+    <div class="skill"><h4>Fundraising</h4><div class="skill-bar"><div class="skill-progress" style="width: 80%;">80%</div></div></div>
+    <div class="skill"><h4>Content Creation</h4><div class="skill-bar"><div class="skill-progress" style="width: 85%;">85%</div></div></div>
+    <div class="skill"><h4>Freelancing</h4><div class="skill-bar"><div class="skill-progress" style="width: 75%;">75%</div></div></div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <h2>My Work</h2>
+    <div class="portfolio-cards">
+      <div class="card">
+        <img src="thijin.jpg" alt="Profile Branding">
+        <div class="card-content">
+          <h3>Profile Branding</h3>
+          <p>Building strong digital identities for personal and professional growth.</p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="ajira.pdf" target="_blank"><img src="aj.png" alt="Ajira Certificate"></a>
+        <div class="card-content">
+          <h3>Ajira Certificate</h3>
+          <p>Certified in Digital Marketing – mastering freelancing, campaigns, and content strategies.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>Fundraising at StepUp.One</h3>
+          <p>Supporting fundraising efforts to empower communities and create youth opportunities.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hackathon-section">
+      <img src="open.jpg" alt="Hackathon Team Experience">
+      <h3>Hackathon Experience</h3>
+      <p>Collaborated in innovation challenges with members and staff, solving real-world problems as a team.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact-form">
+    <h2>Contact Me</h2>
+    <form class="contact-form" action="mailto:thijinsymondz@gmail.com" method="post" enctype="text/plain">
+      <label for="email">Your Email (optional)</label>
+      <input type="email" id="email" name="email" placeholder="Your email">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your message here..."></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/scho.les21/" target="_blank"><i class="fab fa-instagram"></i></a>
+     
+      <a href="https://www.linkedin.com/in/thijin-simon-a02797321/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Thijin Simon Duop. Digital Marketer, Fundraiser, and Innovator.</p>
+  </footer>
+
+</body>
+</html>
